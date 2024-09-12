@@ -30,8 +30,6 @@ trap "echo 'Script terminated at $(date)' >> $OUT_LOGS; exit" SIGINT SIGTERM
 
 #start camera module 
 
-sudo libcamera-vid -width 1640 --height 1232 --framerate 60 -o output.raw
-
 
 while true
 do
