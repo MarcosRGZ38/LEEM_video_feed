@@ -28,6 +28,11 @@ mkdir -p $SAVE_DIR
 echo Script started at $(date) >> $OUT_LOGS
 trap "echo 'Script terminated at $(date)' >> $OUT_LOGS; exit" SIGINT SIGTERM
 
+#start camera module 
+
+sudo libcamera-vid -width 1640 --height 1232 --framerate 60 -o output.raw
+
+
 while true
 do
   OUT_FILE_MP4="${SAVE_DIR}$(date +"exp-vid-%Y-%m-%dT%H-%M-%S.raw")"
